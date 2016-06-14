@@ -31,8 +31,8 @@ public class Prerequisito {
 	
 	public Prerequisito() {}
 	
-	public Prerequisito (Long id,String n,String v) {
-		this.id=id;
+	public Prerequisito (String n,String v) {
+		
 		this.nome=n;
 		this.valore=v;
 	}
