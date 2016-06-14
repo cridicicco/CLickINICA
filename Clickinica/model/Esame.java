@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -47,7 +48,8 @@ private Dottore medico;
 @Temporal (TemporalType.DATE)
 private Date dataEsame;
 
-@OneToMany(mappedBy= "esame")
+@OneToMany
+@JoinColumn(name= "esame_id")
 private List<Risultato> risultati;
 
 public Esame() {
