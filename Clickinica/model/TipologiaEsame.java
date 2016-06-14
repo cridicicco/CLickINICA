@@ -29,9 +29,9 @@ import javax.persistence.OneToMany;
 	@ManyToMany(mappedBy= "tipologieEsami")
 	private List<Prerequisito> prerequisiti;
 	
-	@OneToMany
-	@JoinColumn(name= "esame_id")
-	private List<IndicatoreRisultato> indicatori;
+
+     @ManyToMany(mappedBy="tipologie")
+	private List<Indicatore> indicatori;
 
 
 	
@@ -49,11 +49,11 @@ import javax.persistence.OneToMany;
 		this.prerequisiti=e;
 	}
 	
-    public List<IndicatoreRisultato> getIndicatori() {
+    public List<Indicatore> getIndicatori() {
 		return this.indicatori;
 	}
 	
-	public void setIndicatori(List<IndicatoreRisultato> e) {
+	public void setIndicatori(List<Indicatore> e) {
 		this.indicatori=e;
 	}
 	
