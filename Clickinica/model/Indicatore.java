@@ -1,13 +1,16 @@
 package it.uniroma3.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
-public class IndicatoreRisultato {
+public class Indicatore {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,7 +19,12 @@ public class IndicatoreRisultato {
 	@Column(nullable=false)
 	private String nome;
 	
-	public IndicatoreRisultato() {}
+	@ManyToMany
+	private List<TipologiaEsame> tipologie;
+	
+	
+	
+	public Indicatore() {}
 	
 	public long getId() {
 		return this.id;
