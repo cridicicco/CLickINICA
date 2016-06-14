@@ -1,11 +1,16 @@
 package it.uniroma3.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 		@Entity
 	@NamedQuery(name = "findAllTipologie", query = "SELECT t FROM TipologiaEsame t")
@@ -18,22 +23,47 @@ import javax.persistence.NamedQuery;
 	@Column(nullable = false)
 	private String name;
 
+	@Column(nullable=false)
 	private Float price;
-	@Column(length = 2000)
+	
+	@ManyToMany(mappedBy= "tipologieEsami")
+	private List<Prerequisito> prerequisiti;
+	
+	@OneToMany
+	@JoinColumn(name= "esame_id")
+	private List<IndicatoreRisultato> indicatori;
 
-	private String description;
 
-	@Column(nullable = false)
-	private String code;
+	
+
+
 	
 	public TipologiaEsame() {
     }
+	
+    public List<Prerequisito> getPrerequisiti() {
+		return this.prerequisiti;
+	}
+	
+	public void setPrerequisiti(List<Prerequisito> e) {
+		this.prerequisiti=e;
+	}
+	
+    public List<IndicatoreRisultato> getIndicatori() {
+		return this.indicatori;
+	}
+	
+	public void setIndicatori(List<IndicatoreRisultato> e) {
+		this.indicatori=e;
+	}
+	
 
-	public TipologiaEsame(String name, Float price, String description, String code) {
-        this.name = name;
+	public TipologiaEsame(Long id,String name, Float price) {
+       this.id=id;
+		this.name = name;
         this.price = price;
-        this.description = description;
-        this.code = code;
+        
+        
 }
 
     //          Getters & Setters        
@@ -49,22 +79,7 @@ import javax.persistence.NamedQuery;
     public void setName(String name) {
         this.name = name;
     }
-    
-    public String getCode() {
-        return this.code;
-    }
 
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
     
     public Float getPrice() {
         return price;
@@ -75,12 +90,12 @@ import javax.persistence.NamedQuery;
     }
 	
     public boolean equals(Object obj) {
-        Product product = (Product)obj;
-        return this.getCode().equals(product.getCode());
+        TipologiaEsame t = (TipologiaEsame)obj;
+        return this.getId().equals(t.getId());
     }
 
     public int hashCode() {
-         return this.code.hashCode();
+         return this.id.hashCode();
     }
 
 	public void setId(Long id) {
