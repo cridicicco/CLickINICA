@@ -24,7 +24,7 @@ public class Indicatore {
 	
 	
 	
-	public Indicatore() {}
+	public Indicatore(String nome) {this.nome=nome;}
 	
 	public long getId() {
 		return this.id;
