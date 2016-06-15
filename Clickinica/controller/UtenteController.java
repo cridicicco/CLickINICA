@@ -3,14 +3,22 @@ package it.uniroma3.controller;
 import java.util.List;
 
 
+
+
+
 import it.uniroma3.facade.UtenteFacade;
+import it.uniroma3.model.Esame;
 import it.uniroma3.model.Utente;
 
 import javax.ejb.EJB;
+import javax.ejb.EJBException;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.enterprise.context.SessionScoped;
+
 
 @ManagedBean
+@SessionScoped
 public class UtenteController {
 	
 	@ManagedProperty(value="#{param.id}")
@@ -21,6 +29,9 @@ public class UtenteController {
 	private String password;
 	private String email;
 	private Utente utente;
+	private String loginErr;
+	private Esame esame;
+	private List<Esame> esami;
 	private List<Utente> utenti;
 	
 	@EJB
@@ -31,6 +42,16 @@ public class UtenteController {
 		return "utente"; 
 	}
 	
+	public String validate(){
+		try {this.utente=utenteFacade.validate(userName, password);}
+		catch (EJBException e) {
+			this.loginErr = "Wrong Username or password";
+			return "login";
+		} 
+			this.esami=this.utente.getEsami();
+			return "utente";
+		}
+	
 	public String listUtenti() {
 		this.utenti = utenteFacade.getAllUtenti();
 		return "utenti"; 
@@ -38,14 +59,18 @@ public class UtenteController {
 
 	public String findUtente() {
 		this.utente = utenteFacade.getUtente(id);
-		return "product";
+		return "utente";
 	}
-	
-	public String findUtente(Long id) {
+	       
+	public String findUtente(long id) {
 		this.utente = utenteFacade.getUtente(id);
-		return "product";
+		return "utente";
 	}
 
+	public String findUtenteGestione() {
+		this.utente = utenteFacade.getUtente(id);
+		return "utenteGestione";
+	}
 	public Long getId() {
 		return id;
 	}
@@ -105,6 +130,14 @@ public class UtenteController {
 
 	public void setUtenti(List<Utente> utenti) {
 		this.utenti = utenti;
+	}
+
+	public Esame getEsame() {
+		return esame;
+	}
+
+	public void setEsame(Esame esame) {
+		this.esame = esame;
 	}
 }
 

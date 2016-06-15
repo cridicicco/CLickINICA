@@ -3,9 +3,8 @@ package it.uniroma3.controller;
 
 import java.util.List;
 
-import it.uniroma3.facade.ProductFacade;
+
 import it.uniroma3.facade.TipologiaEsameFacade;
-import it.uniroma3.model.Product;
 import it.uniroma3.model.TipologiaEsame;
 
 import javax.ejb.EJB;
@@ -40,6 +39,10 @@ public class TipologiaEsameController {
 	public String findTipologiaEsame() {
 		this.tipologiaEsame = tipologiaEsameFacade.getTipologiaEsame(id);
 		return "tipologiaEsame";
+	}
+	public String findTipologiaEsameGestione() {
+		this.tipologiaEsame = tipologiaEsameFacade.getTipologiaEsame(id);
+		return "tipologiaEsameGestione";
 	}
 	
 	public String findTipologiaEsame(Long id) {
@@ -103,5 +106,3 @@ public class TipologiaEsameController {
 		this.tipologieEsami = tipologie;
 	}
 }
-
-
