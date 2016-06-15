@@ -49,3 +49,5 @@ Il sistema presenta all'amministratore l'esame corrispondente al codice immesso
 L'amministratore inserisce tutti i risultati dell'esame
 Precondizioni:
 l'amministratore è identificato e autenticato
+
+*L'amministratore è stato considerato come un utente con privilegi speciali (specifici user name e password).
