@@ -6,6 +6,9 @@
 <html>
 <head>
 <title>Clickinica: Nuovo Utente</title>
+<c:if test="${!utenteController.utente.admin}">
+<meta http-equiv="refresh" content="0;URL=faces/login.jsp">
+</c:if>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
