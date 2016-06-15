@@ -1,11 +1,12 @@
 package it.uniroma3.facade;
 
-import it.uniroma3.model.Product;
+
 import it.uniroma3.model.Utente;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 
 import java.util.List;
@@ -21,6 +22,13 @@ public class UtenteFacade {
 		em.persist(utente);
 		return utente;
 	}
+	
+	 public Utente validate (String userName, String password){
+			Query q = em.createQuery("SELECT a FROM Utente a WHERE a.userName='"+ userName + "' AND a.password='"+password+"'");
+			Utente c = (Utente)q.getSingleResult();
+			return c;
+		}
+		
 	
 	public Utente getUtente(Long id) {
 	    Utente utente = em.find(Utente.class, id);
