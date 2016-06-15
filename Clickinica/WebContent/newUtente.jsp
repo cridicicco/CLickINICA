@@ -5,7 +5,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Clickinica: login</title>
+<title>Clickinica: Nuovo Utente</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -65,27 +65,43 @@
 					<f:view>
 
 						<h:form>
-							<h2>Effettua il logIn</h2>
-
-
-							<label for="inputUsername">Username: </label>
-							<div></div>
-
-							<h:inputText styleClass="form-control"
-								value="#{utenteController.userName}" required="true"
-								requiredMessage="ID is mandatory" id="id" />
-							<h:message for="id" />
-							<div></div>
-							<label for="inputPassword">Password:</label>
-							<div></div>
-							<h:inputSecret styleClass="form-control"
-								value="#{utenteController.password}" required="true"
-								requiredMessage="Password is mandatory" id="password" />
-							<h:message for="password" />
-							<br><br>
-							<h:commandButton styleClass="btn btn-lg btn-primary btn-block"
-								value="Submit" action="#{utenteController.validate}" />
-
+						<h1> Registrati</h1>
+							<div>
+								Nome:
+								<h:inputText value="#{utenteController.nome}" required="true"
+									requiredMessage="Name is mandatory" id="name" />
+								<h:message for="name" />
+							</div>
+							<div>
+								Cognome:
+								<h:inputText value="#{utenteController.cognome}" required="true"
+									requiredMessage="Code is mandatory" id="cognome" />
+								<h:message for="cognome" />
+							</div>
+							<div>
+								User Name:
+								<h:inputText value="#{utenteController.userName}"
+									required="true" requiredMessage="Price is mandatory"
+									id="userName" />
+								<h:message for="userName" />
+							</div>
+							<div>
+								Password:
+								<h:inputSecret  value="#{utenteController.password}"
+									required="true" requiredMessage="Name is mandatory"
+									id="password" />
+								<h:message for="password" />
+							</div>
+							<div>
+								E-mail:
+								<h:inputText value="#{utenteController.email}" required="true"
+									requiredMessage="Name is mandatory" id="email" />
+								<h:message for="email" />
+							</div>
+							<div>
+								<h:commandButton value="Invia"
+									action="#{utenteController.createUtente}" />
+							</div>
 						</h:form>
 
 					</f:view>
@@ -94,8 +110,9 @@
 		</div>
 	</div>
 
-	</div>
-	<br><br>
+	
+	<br>
+	<br>
 	<!-- team-grids-caption -->
 	<div class="team-grids-caption">
 		<div class="container">
@@ -114,7 +131,7 @@
 	<div class="footer">
 		<div class="container">
 			<p class="copy-right">
-				Design by <a href="http://google.com/">Cristian,Chiara,Matteo</a>
+				Design by <a href="http://outsidertech.net/">Cristian,Chiara,Matteo</a>
 			</p>
 		</div>
 	</div>

@@ -5,22 +5,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Clickinica: Tipologie Esami</title>
+<title>Utenti</title>
 </head>
 <body>
 <f:view>
-<h1>Tipologie Esami</h1>
+<h1>Utenti</h1>
 <h:form>
 <table>
 	<tr>
-		<th>Name</th><th>Price</th>
+		<th>Clicca sul risultato per vedere i dettagli</th>
 	</tr>
-	<c:forEach var="tipologiaEsame" items="#{tipologiaEsameController.tipologieEsami}">
+	<c:forEach var="risultato" items="#{risultatoController.risultati}">
 		<tr><td>
-		<h:commandLink action="#{tipologiaEsameController.findTipologiaEsame}" value="#{tipologiaEsame.name}">
-			<f:param name="id" value="#{tipologiaEsame.id}" />
+		<h:commandLink action="#{risultatoController.findRisultato}" value=" #{risultato.nome}" >
+		<f:param name="id" value="#{risultato.id}" />
 		</h:commandLink>
-		</td><td>prezzo:${tipologiaEsame.price}, id:${tipologiaEsame.id}</td></tr>
+		
 	</c:forEach>
 </table>
 </h:form>

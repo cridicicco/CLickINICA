@@ -6,7 +6,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Clickinica: TipologiaEsame</title>
+<title>Clickinica: Dottore</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -35,10 +35,10 @@
 				<span class="menu"> </span>
 				<ul>
 					<li><a href="index.html">Home</a></li>
-					<li><a href="faces/services.jsp">Servizi</a></li>
-					<li><a href="faces/login.jsp">Log in</a></li>
-					<li><a href="faces/newUtente.jsp">Sign in</a></li>
-					<li><a href="faces/admin.jsp">Admin</a></li>
+							<li><a href="faces/services.jsp">Servizi</a></li>
+							<li><a href="faces/login.jsp">Log in</a></li>
+							<li><a href="faces/newUtente.jsp">Sign in</a></li>
+							<li><a href="faces/admin.jsp">Admin</a></li>
 				</ul>
 			</div>
 			<!-- top-nav -->
@@ -62,43 +62,26 @@
 			<div class="about-grids">
 				<div class="col-md-9 about-left">
 					<f:view>
-						<h1>${tipologiaEsameController.tipologiaEsame.name}</h1>
 						<h2>Details</h2>
-						<div>Id: ${tipologiaEsameController.tipologiaEsame.id}</div>
-						<div>Code: ${tipologiaEsameController.tipologiaEsame.code}</div>
-						<div>Price: ${tipologiaEsameController.tipologiaEsame.price}</div>
-						<div>Description:
-							${tipologiaEsameController.tipologiaEsame.description}</div>
-							<br>
-							  <h2>La lista dei prerequisiti per questa tipologia</h2>
+						<div>Nome: ${dottoreController.dottore.nome} </div>
+						<div>Cognome: ${dottoreController.dottore.cognome}</div>
+						 <div>Specializzazione: ${dottoreController.dottore.specializzazione}</div>
+						 
+						   <h2>La lista degli esami di questo medico</h2>
 						<h:form>
 								<div>
 									<h:commandButton value="Vai" styleClass="btn btn-lg btn-primary"
-									action="#{prerequisitoController.listPrerequisitiTipologia}">
-									<f:param value="#{tipologiaEsameController.tipologia.id}"></f:param>
+									action="#{esameController.listEsami}">
+									<f:param value="#{esameController.dottore.id}"></f:param>
 								</h:commandButton>
 								</div>
-								<br>
-								<h2>La lista degli indicatori per questa tipologia</h2>
-								<h:commandButton value="Vai" styleClass="btn btn-lg btn-primary"
-									action="#{indicatoreController.listIndicatoriTipologia}">
-									<f:param value="#{tipologiaEsameController.tipologia.id}"></f:param>
-								</h:commandButton>
 							</h:form>
-
 					</f:view>
 				</div>
+				</div>
+				</div>
 				</body>
-				<br><br><br><br><br><br>
-				<br><br><br><br><br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-		<!-- team -->
-	</div>
+	
 	<!-- team-grids-caption -->
 	<div class="team-grids-caption">
 								<div class="container">
@@ -120,6 +103,6 @@
 			</div>
 	</div>
 	<!-- /footer -->
-
+</body>
 </html>
 

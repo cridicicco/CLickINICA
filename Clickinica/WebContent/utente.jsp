@@ -6,14 +6,16 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Clickinica: TipologiaEsame</title>
+<title>ClickInica: Utente</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script type="application/x-javascript">
+	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+</script>
 <!-- webfonts -->
 <link href='http://fonts.googleapis.com/css?family=Arimo:400,700'
 	rel='stylesheet' type='text/css'>
@@ -35,7 +37,7 @@
 				<span class="menu"> </span>
 				<ul>
 					<li><a href="index.html">Home</a></li>
-					<li><a href="faces/services.jsp">Servizi</a></li>
+					<li><a href="faces/services.jsp">Services</a></li>
 					<li><a href="faces/login.jsp">Log in</a></li>
 					<li><a href="faces/newUtente.jsp">Sign in</a></li>
 					<li><a href="faces/admin.jsp">Admin</a></li>
@@ -44,12 +46,12 @@
 			<!-- top-nav -->
 			<!-- script-for-nav -->
 			<script>
-						$(document).ready(function(){
-							$("span.menu").click(function(){
-								$(".top-nav ul").slideToggle(300);
-							});
-						});
-					</script>
+				$(document).ready(function() {
+					$("span.menu").click(function() {
+						$(".top-nav ul").slideToggle(300);
+					});
+				});
+			</script>
 			<!-- script-for-nav -->
 			<div class="clearfix"></div>
 		</div>
@@ -62,43 +64,43 @@
 			<div class="about-grids">
 				<div class="col-md-9 about-left">
 					<f:view>
-						<h1>${tipologiaEsameController.tipologiaEsame.name}</h1>
+						<h1>${utenteController.utente.userName}</h1>
 						<h2>Details</h2>
-						<div>Id: ${tipologiaEsameController.tipologiaEsame.id}</div>
-						<div>Code: ${tipologiaEsameController.tipologiaEsame.code}</div>
-						<div>Price: ${tipologiaEsameController.tipologiaEsame.price}</div>
-						<div>Description:
-							${tipologiaEsameController.tipologiaEsame.description}</div>
-							<br>
-							  <h2>La lista dei prerequisiti per questa tipologia</h2>
+						<div>Nome: ${utenteController.utente.nome}</div>
+						<div>Cognome: ${utenteController.utente.cognome}</div>
+						<div>Email: ${utenteController.utente.email}</div>
+
+                         
+                         <h2>La lista dei tuoi esami</h2>
 						<h:form>
 								<div>
 									<h:commandButton value="Vai" styleClass="btn btn-lg btn-primary"
-									action="#{prerequisitoController.listPrerequisitiTipologia}">
-									<f:param value="#{tipologiaEsameController.tipologia.id}"></f:param>
+									action="#{esameController.listEsamiUtente}">
+									<f:param value="#{esameController.utente.id}"></f:param>
 								</h:commandButton>
 								</div>
-								<br>
-								<h2>La lista degli indicatori per questa tipologia</h2>
-								<h:commandButton value="Vai" styleClass="btn btn-lg btn-primary"
-									action="#{indicatoreController.listIndicatoriTipologia}">
-									<f:param value="#{tipologiaEsameController.tipologia.id}"></f:param>
-								</h:commandButton>
 							</h:form>
-
 					</f:view>
 				</div>
-				</body>
-				<br><br><br><br><br><br>
-				<br><br><br><br><br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
+				
+						
+					</div>
+					
+				</div>
+			</div>
+		
+
+		<!-- about-us -->
 		<!-- team -->
-	</div>
+		<div class="team">
+			<div class="container">
+				<div class="team-head text-center">
+					
+				</div>
+			</div>
+		</div>
+		<!-- team -->
+	
 	<!-- team-grids-caption -->
 	<div class="team-grids-caption">
 								<div class="container">
@@ -118,8 +120,9 @@
 			<div class="container">
 				<p class="copy-right">Design by <a href="http://outsidertech.net">Cristian,Chiara,Matteo</a></p>
 			</div>
+		
 	</div>
 	<!-- /footer -->
-
+</body>
 </html>
 

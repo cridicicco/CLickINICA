@@ -1,20 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=US-ASCII"
-	pageEncoding="US-ASCII"%>
-<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
-<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
+<%@ page language="java" contentType="text/html; charset=US-ASCII" pageEncoding="US-ASCII"%>
+<%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h"  uri="http://java.sun.com/jsf/html"%>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Clickinica: login</title>
+<title>Clickinica: Nuovo Indicatore</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="application/x-javascript">
-	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
-</script>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- webfonts -->
 <link href='http://fonts.googleapis.com/css?family=Arimo:400,700'
 	rel='stylesheet' type='text/css'>
@@ -35,8 +32,8 @@
 			<div class="top-nav">
 				<span class="menu"> </span>
 				<ul>
-					<li><a href="index.html">Home</a></li>
-							<li><a href="faces/services.jsp">Servizi</a></li>
+					<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="faces/services.jsp">Services</a></li>
 							<li><a href="faces/login.jsp">Log in</a></li>
 							<li><a href="faces/newUtente.jsp">Sign in</a></li>
 							<li><a href="faces/admin.jsp">Admin</a></li>
@@ -45,12 +42,12 @@
 			<!-- top-nav -->
 			<!-- script-for-nav -->
 			<script>
-				$(document).ready(function() {
-					$("span.menu").click(function() {
-						$(".top-nav ul").slideToggle(300);
-					});
-				});
-			</script>
+						$(document).ready(function(){
+							$("span.menu").click(function(){
+								$(".top-nav ul").slideToggle(300);
+							});
+						});
+					</script>
 			<!-- script-for-nav -->
 			<div class="clearfix"></div>
 		</div>
@@ -63,31 +60,26 @@
 			<div class="row">
 				<div class="col-md-12">
 					<f:view>
-
 						<h:form>
-							<h2>Effettua il logIn</h2>
-
-
-							<label for="inputUsername">Username: </label>
-							<div></div>
-
-							<h:inputText styleClass="form-control"
-								value="#{utenteController.userName}" required="true"
-								requiredMessage="ID is mandatory" id="id" />
-							<h:message for="id" />
-							<div></div>
-							<label for="inputPassword">Password:</label>
-							<div></div>
-							<h:inputSecret styleClass="form-control"
-								value="#{utenteController.password}" required="true"
-								requiredMessage="Password is mandatory" id="password" />
-							<h:message for="password" />
-							<br><br>
-							<h:commandButton styleClass="btn btn-lg btn-primary btn-block"
-								value="Submit" action="#{utenteController.validate}" />
-
+							<div>
+								Nome:
+								<h:inputText value="#{prerequisitoController.nome}"
+									required="true" requiredMessage="Name is mandatory" id="nome" />
+								<h:message for="name" />
+							</div>
+							<div>
+							Valore:
+								<h:inputText value="#{prerequisitoController.valore}"
+									required="true" requiredMessage="valore is mandatory" id="valore" />
+								<h:message for="valore" />
+								</div>
+							<div>
+								
+								<h:commandButton value="Submit"
+									action="#{prerequisitoController.createPrerequisito}" />
+							</div>
+							
 						</h:form>
-
 					</f:view>
 				</div>
 			</div>
@@ -95,7 +87,6 @@
 	</div>
 
 	</div>
-	<br><br>
 	<!-- team-grids-caption -->
 	<div class="team-grids-caption">
 		<div class="container">
@@ -114,8 +105,7 @@
 	<div class="footer">
 		<div class="container">
 			<p class="copy-right">
-				Design by <a href="http://google.com/">Cristian,Chiara,Matteo</a>
-			</p>
+              Design by <a href="http://facebook.com/Matteomandolini">Matteo,Cristian,Chiara</a>			</p>
 		</div>
 	</div>
 	<!-- /footer -->

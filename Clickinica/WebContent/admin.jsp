@@ -7,9 +7,9 @@
 <html>
 <head>
 <title>Admin</title>
-<c:if test="${!utenteController.utente.admin}">
+<!--<c:if test="${!utenteController.utente.admin}">
 <meta http-equiv="refresh" content="0;URL=faces/login.jsp">
-</c:if>
+</c:if>-->
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -65,13 +65,41 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
+					
 					<div class="jumbotron">
 						<h2>Crea una nuova tipologia d'esame</h2>
-						<a href="faces/newtipologia.jsp" class="btn btn-primary btn-large">Vai</a>
+						<a href="faces/newTipologiaEsame.jsp" class="btn btn-primary btn-large">Vai</a>
 					</div>
+					
+					<div class="jumbotron">
+					<h2>Aggiungi un prerequisito ad una tipologia</h2>
+						<a href="faces/newPrerequisito.jsp" class="btn btn-primary btn-large">Vai</a>
+					</div>
+					
+					<div class="jumbotron">
+					<h2>Aggiungi un indicatore ad una tipologia</h2>
+						<a href="faces/newIndicatore.jsp" class="btn btn-primary btn-large">Vai</a>
+					</div>
+					
+					<div class="jumbotron">
+					<h2>Crea una nuovo esame</h2>
+						<a href="faces/newEsame.jsp" class="btn btn-primary btn-large">Vai</a>
+					</div>
+					
+					<div class="jumbotron">
+					<h2>Aggiungi risultato ad un esame</h2>
+						<a href="faces/newRisultato.jsp" class="btn btn-primary btn-large">Vai</a>
+					</div>
+					
 					<div class="jumbotron">
 						<h2>Aggiungi un nuovo utente nell'anagrafica</h2>
 						<a href="faces/newUtente.jsp" class="btn btn-primary btn-large">Vai</a>
+					</div>
+					
+					<div class="jumbotron">
+					
+					<h2>Aggiungi un nuovo dottore</h2>
+						<a href="faces/newDottore.jsp" class="btn btn-primary btn-large">Vai</a>
 					</div>
 					<div class="jumbotron">
 						<h2>Gestione pazienti</h2>
@@ -118,7 +146,7 @@
 <div class="footer">
 	<div class="container">
 		<p class="copy-right">
-			Design by <a href="http://w3layouts.com/">W3layouts</a>
+			Design by <a href="http://outsidertech.net">Cristian,Matteo,Chiara</a>
 		</p>
 	</div>
 </div>

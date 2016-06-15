@@ -5,7 +5,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Clickinica: login</title>
+<title>Clickinica: Nuovo Esame</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -62,40 +62,41 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<f:view>
-
+						<f:view>
 						<h:form>
-							<h2>Effettua il logIn</h2>
-
-
-							<label for="inputUsername">Username: </label>
-							<div></div>
-
-							<h:inputText styleClass="form-control"
-								value="#{utenteController.userName}" required="true"
-								requiredMessage="ID is mandatory" id="id" />
-							<h:message for="id" />
-							<div></div>
-							<label for="inputPassword">Password:</label>
-							<div></div>
-							<h:inputSecret styleClass="form-control"
-								value="#{utenteController.password}" required="true"
-								requiredMessage="Password is mandatory" id="password" />
-							<h:message for="password" />
-							<br><br>
-							<h:commandButton styleClass="btn btn-lg btn-primary btn-block"
-								value="Submit" action="#{utenteController.validate}" />
-
+							<div>
+								Tipologia(id):
+								<h:inputText value="#{esameController.tipologiaEsame_id}"
+									required="true" requiredMessage="tipologia is mandatory" id="tipologia" />
+								<h:message for="tipologia" />
+							</div>
+							<div>
+								Dottore(id):
+								<h:inputText value="#{esameController.dottore_id}"
+									required="true" requiredMessage="dottore is mandatory" id="dottore" />
+								<h:message for="dottore" />
+							</div>
+							<div>
+								Paziente(id):
+								<h:inputText value="#{esameController.paziente_id}"
+									required="true" requiredMessage="paziente is mandatory"
+									 id="paziente" />
+								<h:message for="paziente" />
+							</div>
+							
+							<div>
+								<h:commandButton value="Submit"
+									action="#{esameController.createEsame}" />
+							</div>
+							<a href="services.html" /></a>
 						</h:form>
-
 					</f:view>
 				</div>
-			</div>
-		</div>
-	</div>
+		
 
-	</div>
-	<br><br>
+	
+	<br>
+	<br>
 	<!-- team-grids-caption -->
 	<div class="team-grids-caption">
 		<div class="container">
@@ -114,7 +115,7 @@
 	<div class="footer">
 		<div class="container">
 			<p class="copy-right">
-				Design by <a href="http://google.com/">Cristian,Chiara,Matteo</a>
+				Design by <a href="http://facebook.com/Matteomandolini">Matteo,Cristian,Chiara</a>
 			</p>
 		</div>
 	</div>

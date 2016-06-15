@@ -5,7 +5,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Clickinica: login</title>
+<title>Clickinica: NuovoDottore</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -36,10 +36,10 @@
 				<span class="menu"> </span>
 				<ul>
 					<li><a href="index.html">Home</a></li>
-							<li><a href="faces/services.jsp">Servizi</a></li>
-							<li><a href="faces/login.jsp">Log in</a></li>
-							<li><a href="faces/newUtente.jsp">Sign in</a></li>
-							<li><a href="faces/admin.jsp">Admin</a></li>
+					<li><a href="faces/services.jsp">Servizi</a></li>
+					<li><a href="faces/login.jsp">Log in</a></li>
+					<li><a href="faces/newUtente.jsp">Sign in</a></li>
+					<li><a href="faces/admin.jsp">Admin</a></li>
 				</ul>
 			</div>
 			<!-- top-nav -->
@@ -65,29 +65,31 @@
 					<f:view>
 
 						<h:form>
-							<h2>Effettua il logIn</h2>
+							<div>
+								Nome:
+								<h:inputText value="#{dottoreController.nome}" required="true"
+									requiredMessage="Name is mandatory" id="name" />
+								<h:message for="name" />
+							</div>
+							<div>
+								Cognome:
+								<h:inputText value="#{dottoreController.cognome}"
+									required="true" requiredMessage="cognome is mandatory"
+									id="cognome" />
+								<h:message for="cognome" />
+							</div>
+							<div>
+								Specializzazione:
+								<h:inputText value="#{dottoreController.specializzazione}"
+									required="true" requiredMessage="specialization is mandatory"
+									id="specializzazione" />
+								<h:message for="specializzazione" />
 
-
-							<label for="inputUsername">Username: </label>
-							<div></div>
-
-							<h:inputText styleClass="form-control"
-								value="#{utenteController.userName}" required="true"
-								requiredMessage="ID is mandatory" id="id" />
-							<h:message for="id" />
-							<div></div>
-							<label for="inputPassword">Password:</label>
-							<div></div>
-							<h:inputSecret styleClass="form-control"
-								value="#{utenteController.password}" required="true"
-								requiredMessage="Password is mandatory" id="password" />
-							<h:message for="password" />
-							<br><br>
-							<h:commandButton styleClass="btn btn-lg btn-primary btn-block"
-								value="Submit" action="#{utenteController.validate}" />
-
-						</h:form>
-
+							</div>
+							<div>
+								<h:commandButton value="Invia"
+									action="#{dottoreController.createDottore}" />
+									</h:form>
 					</f:view>
 				</div>
 			</div>
@@ -95,7 +97,8 @@
 	</div>
 
 	</div>
-	<br><br>
+	<br>
+	<br>
 	<!-- team-grids-caption -->
 	<div class="team-grids-caption">
 		<div class="container">
@@ -114,8 +117,7 @@
 	<div class="footer">
 		<div class="container">
 			<p class="copy-right">
-				Design by <a href="http://google.com/">Cristian,Chiara,Matteo</a>
-			</p>
+Design by <a href="http://facebook.com/Matteomandolini">Matteo,Cristian,Chiara</a>			</p>
 		</div>
 	</div>
 	<!-- /footer -->

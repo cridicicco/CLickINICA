@@ -6,7 +6,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>medical-pluse Website Template | Services :: w3layouts</title>
+<title>Clickinica: Servizi</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -158,91 +158,61 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-md-3 services-right">
-					<h3>Recent-Services</h3>
-					<ul>
-						<li><a href="#"><span> </span>tortor sit amet molestie
-								fringilla</a></li>
-						<li><a href="#"><span> </span>packages and web page
-								editors</a></li>
-						<li><a href="#"><span> </span>desktop publishing packages</a></li>
-						<li><a href="#"><span> </span>tweb page editors now use</a></li>
-						<li><a href="#"><span> </span>opposed to using Many
-								desktop</a></li>
-						<li><a href="#"><span> </span>Many desktop publishing</a></li>
-						<li><a href="#"><span> </span>packages and web page
-								editors</a></li>
-						<li><a href="#"><span> </span>desktop publishing packages</a></li>
-						<li><a href="#"><span> </span>tweb page editors now use</a></li>
-					</ul>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-		<!-- team -->
-		<div class="team">
-			<div class="container">
-				<div class="team-head text-center">
-					<h3>Our team</h3>
-				</div>
-				<!-- team-grids -->
-				<div class="team-grids">
-					<div class="col-md-4">
-						<div class="team-grid">
-							<div class="team-people">
-								<div class="team-people-pic">
-									<img src="images/d1.jpg" title="name">
-								</div>
-								<div class="team-people-info">
-									<h3>Established</h3>
-									<p>reader will be distracted by the readable</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="team-grid">
-							<div class="team-people">
-								<div class="team-people-pic">
-									<img src="images/d2.jpg" title="name">
-								</div>
-								<div class="team-people-info">
-									<h3>Established</h3>
-									<p>reader will be distracted by the readable</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="team-grid">
-							<div class="team-people">
-								<div class="team-people-pic">
-									<img src="images/d3.jpg" title="name">
-								</div>
-								<div class="team-people-info">
-									<h3>Established</h3>
-									<p>reader will be distracted by the readable</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-		</div>
-		<!-- team -->
+				
 	</div>
-	<!-- Services -->
-	<!-- team-grids-caption -->
+	
+	<div class="team">
+						<div class="container">
+							<div class="team-head text-center">
+								
+							</div>
+							<!-- team-grids -->
+							<div class="team-grids">
+								<div class="col-md-4">
+									<div class="team-grid">
+										<div class="team-people">
+											<div class="team-people-pic">
+											    <h2>Matteo Mandolini</h2>
+												<img src="images/d1.jpg" title="name">
+											</div>
+											
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="team-grid">
+										<div class="team-people">
+											<div class="team-people-pic">
+											     <h2>Cristian Di Cicco</h2>
+												<img src="images/d2.jpg" title="name">
+											</div>
+											
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="team-grid">
+										<div class="team-people">
+											<div class="team-people-pic">
+											     <h2>Chiara Mercurio</h2>
+												<img src="images/d3.jpg" title="name">
+											</div>
+											
+										</div>
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+					</div>	<!-- team-grids-caption -->
 	<div class="team-grids-caption">
 		<div class="container">
 			<div class="team-grids-caption-left">
-				<h4>He point of using Lorem Ipsum is that</h4>
-				<p>as opposed to using Many desktop publishing packages and web
-					page editors now use</p>
+			<h4>La tua Clinica con un click</h4>
+										<p>Al tuo servizio 24h su 24 </p>
 			</div>
 			<div class="team-grids-caption-right">
-				<a class="team-btn" href="contact.html">Contact</a>
+				<a class="team-btn" href="index.html">Contattaci</a>
 			</div>
 			<div class="clearfix"></div>
 		</div>
@@ -252,7 +222,7 @@
 	<div class="footer">
 		<div class="container">
 			<p class="copy-right">
-				Design by <a href="http://w3layouts.com/">W3layouts</a>
+				Design by <a href="http://google.com">Cristian,Matteo,Chiara</a>
 			</p>
 		</div>
 	</div>
